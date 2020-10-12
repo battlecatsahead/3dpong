@@ -15,7 +15,7 @@ void display_menu(struct gfx_configuration *config)
 
     // draw menu
     if(menupause == 1){
-	printf("\x1b[3;3H %s normal pong [%s]\n", selected == 0 ? ">" : " ", config->pong ? "ON" : "OFF");
+	printf("\x1b[4;3H %s normal pong [%s]\n", selected == 0 ? ">" : " ", config->pong ? "ON" : "OFF");
     printf("\x1b[5;3H %s Resume Game       \n", selected == 1 ? ">" : " ");
     printf("\x1b[6;3H %s Exit Game         \n", selected == 2 ? ">" : " ");
 	}
@@ -45,6 +45,7 @@ void display_menu(struct gfx_configuration *config)
         }
         else if (selected == 2)
         {
+        	break;
             res = 1;
         } else
         {

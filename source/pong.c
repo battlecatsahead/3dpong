@@ -1,4 +1,5 @@
 #include "pong.h"
+#include "menu.h"
 #include <citro2d.h>
 #include <string.h>
 #include <stdio.h>
@@ -89,7 +90,8 @@ void controls(){
 		// Respond to user input
 		u32 kHeld = hidKeysHeld();	
 		u32 kDown = hidKeysDown();
-
+		if (kDown & KEY_START)
+			break; // break in order to return to hbmenu
 		
 		if(kHeld & KEY_B){
 		rect1y += 3;

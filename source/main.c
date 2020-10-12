@@ -17,7 +17,7 @@ void pong_game_loop(){
 	controls();
 	drawpong();
 }
-
+shouldrun = 1;
 //---------------------------------------------------------------------------------
 int main(int argc, char* argv[]) {
 //---------------------------------------------------------------------------------
@@ -55,14 +55,16 @@ int main(int argc, char* argv[]) {
 	u32 clrClear = C2D_Color32(0x00, 0x00, 0x00, 0x00);
 
 	// Main loop
-	while (aptMainLoop())
+	while (aptMainLoop() && shouldrun == 1)
 	{
 		hidScanInput();
 
 		// Respond to user input
 		u32 kDown = hidKeysDown();
-		if (kDown & KEY_START)
+		if (kDown & KEY_START){
+		    printf("START pressed, exitting...");
 			break; // break in order to return to hbmenu
+		}
 		if(kDown & KEY_SELECT){
 			display_menu(&gfx_config);
 			pongon = 0;

@@ -11,6 +11,6 @@ struct gfx_configuration
 void display_menu(struct gfx_configuration *config);
 extern bool menupause;
 extern bool pongon;
-
+extern int shouldrun;
 #endif
 

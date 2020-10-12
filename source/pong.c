@@ -90,9 +90,10 @@ void controls(){
 		// Respond to user input
 		u32 kHeld = hidKeysHeld();	
 		u32 kDown = hidKeysDown();
-		if (kDown & KEY_START)
-			break; // break in order to return to hbmenu
-		
+		if (kDown & KEY_START){
+		printf("START pressed, exitting...");
+		shouldrun = 0;
+		}
 		if(kHeld & KEY_B){
 		rect1y += 3;
 		}

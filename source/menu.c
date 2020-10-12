@@ -45,7 +45,7 @@ void display_menu(struct gfx_configuration *config)
         }
         else if (selected == 2)
         {
-        	break;
+        	shouldrun = 0;
             res = 1;
         } else
         {
